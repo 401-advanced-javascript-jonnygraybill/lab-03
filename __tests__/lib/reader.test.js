@@ -19,11 +19,11 @@ describe('File Reader Module', () => {
 
 
   it('reads 3 files', done => {
-    let files = ['file1.txt', 'file2.txt', 'file2.txt'];
+    let files = ['1.txt', '2.txt', '3.txt'];
     reader(files, (err,data) => {
-      expect(err).toBeNull();
+      expect(err).toBeUndefined();
       expect(data instanceof Array ).toBeTruthy();
-      expect(data.length ).toBe(3);
+      expect(data.length).toBe(3);
       done();
     });
   });
