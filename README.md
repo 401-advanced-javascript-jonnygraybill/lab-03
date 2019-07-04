@@ -3,7 +3,7 @@
 ### Author: Jonny Graybill
 
 ### Links and Resources
-* [submission PR](https://github.com/401-advanced-javascript-jonnygraybill/lab-03/pull/1) 
+* [submission PR](https://github.com/401-advanced-javascript-jonnygraybill/lab-03/pull/3) 
 
 * [travis]([![Build Status](https://www.travis-ci.com/401-advanced-javascript-jonnygraybill/lab-03.svg?branch=part-1)](https://www.travis-ci.com/401-advanced-javascript-jonnygraybill/lab-03))
 
