@@ -1,27 +1,34 @@
 'use strict';
 
-const fileReader = require('./lib/reader.js');
+// const fileReader = require('./lib/reader.js');
 const fs = require('fs');
-
+const faker = require('faker');
 let file = `${__dirname}/files/test.txt`;
 
-let doSomething = (err, data) => {
-  if (err) { throw err; }
-  console.log('before');
-  console.log(data);
-  fs.appendFile(`${__dirname}/files/test.txt`, ` ${Math.random()}`, function (err) {
-    if (err) throw err;
-    console.log('Saved!');
-  });
-};
+let savedData = []
+let i = 0;
+do {
+  savedData.push(faker.hacker.noun());
+  i++;
+} while (i < 100);
 
-setTimeout(function () {
-  let readItNow = (err, data) => {
-    if (err) { throw err; }
-    console.log('after');
-    console.log(`🤨 ${data}`);
-  }
-  fileReader(file, readItNow);
-  }, 2000);
+fs.readFile(file, (err, data) => {
+    let buffer = data.toString()
+    if (err) { throw (err); }
+    else { 
+      console.log(`😂 ${buffer}`); return (buffer); 
+    }
+})
 
-fileReader(file, doSomething);
+fs.appendFile(file, savedData, function (err) {
+    if (err) { throw err };
+    console.log(`The File Got Saved 😍`);
+});
+
+fs.readFile(file, (err, data) => {
+    let buffer = data.toString()
+    if (err) { throw (err); }
+    else { 
+      console.log(`😱 ${buffer}`); return (buffer); 
+    }
+})
